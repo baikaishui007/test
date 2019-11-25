@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机点名器</title>
+    <style>
+       #box{
+            text-align: center;
+            width: 800px;
+            margin: 0 auto;
+       }
+       #box table{
+
+       }
+       #box table tr{
+            height: 36px;
+            line-height: 36px;
+        }
+        #box table tr td{ 
+            width: 80px;
+        }
+        .active{
+            background-color:palevioletred; 
+            color: #fff;
+            border-radius: 10%;
+        }
+        #box button{
+            cursor: pointer;
+            margin-top: 25px;
+            width: 200px;
+            height: 36px;
+            line-height: 24px;
+            border: 0px;
+            background-color:palevioletred; 
+            color: #fff;
+        }   
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>在线点名器</h2>
+        <table id="ot">
+            <tr>
+                <td>第1位</td>
+                <td class="active">第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+            </tr>
+            <tr>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+            </tr>
+            <tr>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+            </tr>
+            <tr>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+                <td>第1位</td>
+            </tr>
+        </table>
+        <button id="btn">开始随机</button>
+        <img src="" >
+    </div>
+</body>
+<script>
+    var otable = document.getElementById('ot');
+    var otr = otable.getElementsByTagName('tr');
+    var num = 0;
+    var timer;
+    for(var i = 0;i<otr.length;i++){
+        num += otr[i].getElementsByTagName('td').length;
+    };
+    document.getElementById('btn').onclick = function(){
+        timer = setinterval(fun(),20);
+    }
+    function fun(){
+        var rand = Math.ceil(Math.random()*num);
+            console.log(rand);
+    }
+   
+</script>
+</html>
